@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Stats</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jscharting.com/latest/jscharting.js"></script>
+    <script type="text/javascript" src="https://code.jscharting.com/latest/modules/maps.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+</head>
+
+<body>
+    <div id="headline">
+        <p id="global-cases">Global Confirmed Cases: </p>
+        <p id="global-deaths">Global Confirmed Deaths: </p>
+    </div>
+    <section class="hero">
+        <img src="covid.tif" alt="Covid Image">
+        <h1 id="title">COVID-19 Statistics</h1>
+        <a class="fas fa-chevron-down down" href="#countries"></a>
+    </section>
+    <section id="countries">
+        <h2>Select a Country</h2>
+        <div class="graph-container">
+            <div id="chartDiv1" style="width: 100%; height: 400px;"></div>
+        </div>
+        <div id="dropdown-container">
+            <select name="countries" id="dropdown"></select>
+            <a id="country-submit" href="#country-data">Search</a>
+        </div>
+    </section>
+    <section id="country-data">
+        <h2 id="country-title">Country</h2>
+        <p id="country-cases">Confirmed Cases in </p>
+        <p id="country-deaths">Confirmed Deaths in </p>
+        <div class="graph-container">
+            <div id="chartDiv2" style="width: 100%; height: 400px;"></div>
+        </div>
+    </section>
+    <h2 id="test"></h2>
+    <script src="index.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyClAViD1Wjspzv9BqNoFpmbTHf3jRkpLso",
+            authDomain: "covid-19-statistics-3d822.firebaseapp.com",
+            projectId: "covid-19-statistics-3d822",
+            storageBucket: "covid-19-statistics-3d822.appspot.com",
+            messagingSenderId: "637140909601",
+            appId: "1:637140909601:web:265e95a5372af46e14ed60"
+        };
+        const app = initializeApp(firebaseConfig);
+    </script>
+</body>
+
+<footer>
+    <p id="date"></p>
+</footer>
+
+</html>
